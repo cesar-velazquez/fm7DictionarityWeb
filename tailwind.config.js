@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily:{
+      "Bree": ["Bree Serif", "serif"],
+      "Ibm": ["IBM Plex Serif", "serif"]
+    }
   },
   plugins: [],
 }
