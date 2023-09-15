@@ -10,8 +10,9 @@ function App() {
 
   const changeInput = (e) => {
     const searchWord = e.target.value
-    if (searchWord.length === 0) {
-      setWord("")
+    if (searchWord.length === 0) { 
+      setWord(searchWord)     
+      setSearch(null)
       console.log(searchWord)
     } else {
       setWord(searchWord)
@@ -38,10 +39,18 @@ function App() {
 
 
   return (
-    <main className=' min-h-screen sm:max-w-[900px] sm:m-auto p-4 bg-yellow-200 '>
-      {/* max-w-[900px] */}
-      <section className=' bg-white/80 grid m-auto   '> 
+    <main className=' min-h-screen sm:m-auto p-4 grid 
+    bg-yellow-50  '>
+      {/* //rounded-2xl sm:max-w-[700px] lg:max-w-[850px] border-2 border-slate-600 bg-yellow-500 */}
+      <section className=' bg-yellow-100/80 w-[min(100%,320px)]       
+      grid m-auto  rounded-2xl grid-cols-1 grid-rows-[1fr_auto] border border-slate-300
+      shadow-lg 
+      sm:w-[min(100%,700px)] 
+      lg:w-[min(100%,850px)] '> 
         <div className='' >
+          <div>
+            <p id='Message' className=''></p>
+          </div>
           <div className='flex items-center justify-between ' >
             <div>
               <i className='p-6 text-4xl bx bx-book-alt'></i>
@@ -53,10 +62,10 @@ function App() {
               <i className='p-6 text-3xl bx bx-moon'></i>
             </div>
           </div>
-          <div className='flex justify-center mx-auto relative max-w-[800px]'>
+          <div className='flex justify-center mx-auto relative '>
             <input
               className='border-2 py-2 w-[90%]  p-2  justify-center rounded-2xl 
-                bg-slate-100 outline-none text-center'
+                bg-yellow-50 outline-none text-center'
               type="text"
               placeholder='Search a word...'
               id='search'
@@ -68,7 +77,6 @@ function App() {
             bx bx-search-alt-2'></i>
             </div>
           </div>
-
           <Body search={search} isPlaying={isPlaying} handlePlayClick={handlePlayClick} />
         </div>
       </section>
